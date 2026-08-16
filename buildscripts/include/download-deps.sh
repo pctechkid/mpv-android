@@ -54,7 +54,7 @@ fi
 if [ ! -d libass ]; then
 	git clone https://github.com/libass/libass
 	git -C libass checkout 338fd2cea8ac156a910b04838b5f40b868e41160
-	git -C libass apply ../../patches/libass-opaque-box-style-runs.patch
+	git -C libass apply ../../patches/libass-disable-bold-italic.patch
 fi
 
 # lua
