@@ -38,6 +38,9 @@ dep_mpv_android=(mpv)
 
 # pinned ffmpeg revision
 v_ci_ffmpeg=n7.0.2
+v_ci_mpv=7653cc8f096e41d39697280986f4e75534a12988
+v_ci_libplacebo=f1cc9dd8e70027b6b150cac359fdc2d259b5b0b2
+v_ci_dav1d=0558c332ca3563248969be0b754de553a187369d
 
 # filename used to uniquely identify a build prefix
-ci_tarball="prefix-ndk-${v_ndk}-lua-${v_lua}-unibreak-${v_unibreak}-harfbuzz-${v_harfbuzz}-fribidi-${v_fribidi}-freetype-${v_freetype}-mbedtls-${v_mbedtls}-ffmpeg-${v_ci_ffmpeg}.tgz"
+ci_tarball="prefix-ndk-${v_ndk}-lua-${v_lua}-unibreak-${v_unibreak}-harfbuzz-${v_harfbuzz}-fribidi-${v_fribidi}-freetype-${v_freetype}-mbedtls-${v_mbedtls}-ffmpeg-${v_ci_ffmpeg}-dav1d-${v_ci_dav1d}-libplacebo-${v_ci_libplacebo}.tgz"

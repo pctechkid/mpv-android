@@ -15,7 +15,10 @@ if [ ! -d mbedtls ]; then
 fi
 
 # dav1d
-[ ! -d dav1d ] && git clone https://github.com/videolan/dav1d
+if [ ! -d dav1d ]; then
+	git clone https://github.com/videolan/dav1d
+	[ $IN_CI -eq 1 ] && git -C dav1d checkout $v_ci_dav1d
+fi
 
 # ffmpeg
 if [ ! -d ffmpeg ]; then
@@ -62,7 +65,15 @@ if [ ! -d lua ]; then
 fi
 
 # libplacebo
-[ ! -d libplacebo ] && git clone --recursive https://github.com/haasn/libplacebo
+if [ ! -d libplacebo ]; then
+	git clone https://github.com/haasn/libplacebo
+	if [ $IN_CI -eq 1 ]; then
+		git -C libplacebo checkout $v_ci_libplacebo
+		git -C libplacebo submodule update --init --recursive
+	else
+		git -C libplacebo submodule update --init --recursive
+	fi
+fi
 
 # mpv
 [ ! -d mpv ] && git clone https://github.com/mpv-player/mpv
